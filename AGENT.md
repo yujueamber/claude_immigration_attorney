@@ -49,6 +49,7 @@ knowledge/
 | `petition-audit` | Audits any petition letter — verifies every claim, flags errors, produces severity-rated report | All relevant knowledge files |
 | `expert-letter-drafter` | Drafts expert/reference/recommendation letters — assigns criteria to experts, ensures no overlap | `criteria/`, `prongs/`, `evidence-hierarchy.md` |
 | `rfe-response-drafter` | Analyzes USCIS RFE, diagnoses original petition weaknesses, drafts point-by-point response with new evidence | All relevant knowledge files |
+| `niw-narrative-review` | Strict NIW quality gate: employer-removal test, generic-engineer test, claim-to-evidence audit, Prong-specific RFE-risk review | `prongs/`, `overview-niw.md`, `evidence-hierarchy.md`, `argument-patterns.md`, `niw-narrative-review-guidelines.md` |
 
 ## Workflow
 
@@ -74,6 +75,18 @@ Source documents → document-summary-arrangement → document index
 - **No fabrication** — if it's not in the documents, don't invent it
 - **No client PII in knowledge/** — all case lessons must be anonymized
 - **Lawyer decides** — skills produce drafts for attorney review, not legal advice
+
+## NIW Case Template
+
+For evidence-first NIW work, copy `templates/niw-case/` into the gitignored workspace:
+
+```bash
+cp -R templates/niw-case workspace/<matter-name>
+```
+
+Use `00_CASE_DASHBOARD.md` as the single source of truth and track evidence with `E-###` IDs and claims with `C-P1-###`, `C-P2-###`, and `C-P3-###` IDs.
+
+Run `niw-narrative-review` as a quality gate before accepting the proposed endeavor, Prong maps, or final narrative.
 
 ## workspace/
 
